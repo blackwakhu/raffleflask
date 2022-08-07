@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block head %}
+<title>rafflepage</title> 
+{% endblock %}
+{% block body %}
+<h1>ready to win</h1>
+<div>
+	<form action="{{url_for('homepage')}}" method="POST">
+		<label for="name">name</label>
+		<input type="text" name="name" placeholder="enter your name"><br><br>
+		<label for="firstbet">first bet</label>
+		<input type="number" name="fbet" placeholder="first bet(max=10)" max="10" min="0"><br>
+		<label for="secondbet">second bet</label>
+		<input type="number" name="sbet" placeholder="second bet(max=100)" max="100" min="0"><br>
+		<label for="thirdbet">third bet</label>
+		<input type="number" name="tbet" placeholder="third bet(max=1000)" max="1000" min="0"><br>
+		<label for="bonusbet">bonus bet</label>
+		<input type="number" name="bbet" placeholder="bonus bet(max=10000)" max="10000" min="0"><br>
+		<button type="submit">submit</button>
+</div>
+{% endblock %}

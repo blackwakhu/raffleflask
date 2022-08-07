@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>check results</title>
+{% endblock %}
+
+{% block body %}
+
+<h1>the results for the raffle</h1>
+
+<div id="table-div">
+	here are your results for the draw {{name|capitalize}}<br>
+	<table>
+		<tr>
+			<th>bet type</th>
+			<th>guessed</th>
+			<th>comment</th>
+		</tr>
+		<tr>
+			<td>first bet</td>
+			<td>{{ fbet }}</td>
+			<td>{{ first_comment }}
+		</tr>
+		<tr>
+			<td>second bet</td>
+			<td> {{ sbet }}</td>
+			<td>{{ second_comment }}</td>
+		</tr>
+		<tr>
+			<td>third bet</td>
+			<td>{{ tbet }}</td>
+			<td>{{ third_comment}} </td>
+		</tr>
+		<tr>
+			<td>bonus comment</td>
+			<td>{{ bbet }}</td>
+			<td>{{ bonus_comment }}</td>
+		</tr>
+		<tr>
+			<td>amount earned</td>
+			<td rowspan="2">{{ total_won }}</td>
+		</tr>
+	</table>
+</div>
+
+<a href="{{url_for('homepage')}}">back</a>
+
+{% endblock %}
